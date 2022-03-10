@@ -21,4 +21,6 @@ while True:
     message = (socket_server.recv(1024)).decode()
     print(server_name, ":", message)
     message = input("Me : ")
+    if(message=="exit"):
+        exit(0)
     socket_server.send(message.encode()) 

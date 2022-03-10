@@ -9,7 +9,6 @@ port = 8080
 new_socket.bind((host_name, port))
 print("Binding successful!")
 print("This is your IP: ", s_ip)
- 
 name = input('Enter name: ')
  
 new_socket.listen(1) 
@@ -26,6 +25,8 @@ print(client + ' has connected.')
 conn.send(name.encode())
 while True:
     message = input('Me : ')
+    if(message=="exit"):
+        exit(0)
     conn.send(message.encode())
     message = conn.recv(1024)
     message = message.decode()
